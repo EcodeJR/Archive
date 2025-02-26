@@ -24,7 +24,7 @@ const AuthPage = ({ type }) => {
       if (!response.ok) throw new Error(data.error || "Something went wrong");
 
       localStorage.setItem("token", data.token);
-      navigate("/upload");
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }

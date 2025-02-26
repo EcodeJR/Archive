@@ -93,7 +93,7 @@ const ArchiveSystem = () => {
             <p className="text-gray-600">Course Code: {doc.courseCode || "N/A"}</p>
             <p className="text-gray-600">Department: {doc.department || "N/A"}</p>
             <p className="text-gray-600 mb-2">Level: {doc.level || "N/A"}</p>
-            <a href={`http://localhost:5000/api/documents/download/${doc._id}`} target="_blank" rel="noopener noreferrer">
+            <a className="p-2 bg-green-500 text-white rounded" href={`http://localhost:5000/api/documents/download/${doc._id}`} target="_blank" rel="noopener noreferrer">
   Download
 </a>
 
@@ -110,11 +110,11 @@ const ArchiveSystem = () => {
               <div className="mt-4">
                 <h3 className="text-lg font-bold">Reviews:</h3>
                 {doc.reviews?.length > 0 ? (
-                  <ul className="list-disc pl-4">
+                  <ol className="list-disc pl-4">
                    {doc.reviews.map((review, index) => (
-                      <div key={index}>{review.text}</div>
+                      <div className="bg-gray-100 p-2 shadow rounded-sm" key={index}>{review.text}</div>
                     ))}
-                  </ul>
+                  </ol>
                 ) : (
                   <p>No reviews yet.</p>
                 )}

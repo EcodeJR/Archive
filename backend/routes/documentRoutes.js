@@ -20,7 +20,7 @@ const uploadToCloudinary = (fileBuffer) => {
     const stream = cloudinary.uploader.upload_stream(
       {
         resource_type: "raw",
-        folder: "documents", // Optional folder name
+        // folder: "documents", // Optional folder name
         access_mode: "public", // Ensure it's public
       },
       (error, uploadResult) => {
@@ -57,10 +57,7 @@ router.post("/upload", authMiddleware, upload.single("file"), async (req, res) =
       reviews: [],
     });
     await newDocument.save();
-    
-    
-    
-    
+
     res.status(201).json(newDocument);
   } catch (error) {
     res.status(500).json({ error: error.message });
